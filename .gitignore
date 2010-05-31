@@ -1,0 +1,12 @@
+*.exe
+*.dll
+*.pdb
+*.suo
+*.exe.config
+*.exe.manifest
+VolumeOSD/CoreAudioApi/obj/
+VolumeOSD/WaveLibMixer/obj/
+VolumeOSD/VolumeOSD/obj
+VolumeOSDThemeInstaller/VolumeOSDThemeInstaller/obj
+*.csproj.user
+
