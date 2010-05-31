@@ -11,7 +11,7 @@
 ; Global Bindings
 !define DOTNET_VERSION "2.0"
 !define INSTALLED_NAME  "VolumeOSD"   ;; This is the name that will go into the Add/Remove
-!define VERSION "1.0.0.06"                                   ;; Version of the application
+!define VERSION "1.0.0.10"                                   ;; Version of the application
 !define APPLICATION_TITLE_NAME "VolumeOSD"
 
 
@@ -136,12 +136,19 @@ SectionIn RO ;Required Object, cannot be deselected
   File VolumeOSD.vshost.exe.manifest
   
   ${registerExtension} "$INSTDIR\VolumeOSDThemeInstaller.exe" ".VolumeOSD" "VolumeOSD Theme"
+
+
+  SetShellVarContext all
+  StrCpy $0 $APPDATA
   
-  
-  ExecWait "$INSTDIR\VolumeOSDThemeInstaller.exe BlueParen.VolumeOSD -A"
+  CreateDirectory "$0\KenMazaika"
+  CreateDirectory "$0\KenMazaika\VolumeOSD"
+  CreateDirectory "$0\KenMazaika\VolumeOSD\themes"
+ 
+  ExecWait "$INSTDIR\VolumeOSDThemeInstaller.exe BlueParen.VolumeOSD -S"
   ExecWait "$INSTDIR\VolumeOSDThemeInstaller.exe RedParen.VolumeOSD -S"
-  ExecWait "$INSTDIR\VolumeOSDThemeInstaller.exe GreenParen.VolumeOSD -S"
-  
+  ExecWait "$INSTDIR\VolumeOSDThemeInstaller.exe GreenParen.VolumeOSD -A"
+  AccessControl::GrantOnFile "C:\ProgramData\KenMazaika\VolumeOSD\settings.xml" "(BU)" "FullAccess"
   ;; Store installation folder and version
   WriteRegStr HKLM "Software\KenMazaika\VolumeOSD" "" $INSTDIR
   WriteRegStr HKLM "Software\KenMazaika\VolumeOSD" "Version" ${VERSION}
