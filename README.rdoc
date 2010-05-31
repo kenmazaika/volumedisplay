@@ -3,4 +3,13 @@ kenmazaika 2010
 
 protected under the creative commons Attribution-Noncommercial 3.0 United States, http://creativecommons.org/licenses/by-nc/3.0/us/
 
-`all published adaptations must link to volumedisplay.com`
+all published adaptations must link to volumedisplay.com
+
+== project organization
+
+The VolumeOSD application is the main application that is run.  This application works as both the preview tool and the daemon that runs in the background.  
+By default the application runs in daemon  mode, but if you pass '-P' as the only command line argument the daemon will be killed and the program will run in preview mode.  Preview mode allows different themes to be previewed and activated.
+
+The VolumeOSDThemeInstaller application is registered to open *.VolumeOSD files, and automatically install them to the ProgramData/KenMazaika/VolumeOSD folder.  Double clicking a *.VolumeOSD file should automatically install this file to your computer.  *.VolumeOSD files are zip files in a specific schema, more information about building themes is available here: volumedisplay.com/theme
+
+Install folder contains all the installation scripts, and include files that are needed to build the nullsoft installer.
