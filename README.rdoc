@@ -1,9 +1,9 @@
 == volumedisplay
 kenmazaika 2010
 
-protected under the creative commons Attribution-Noncommercial 3.0 United States, http://creativecommons.org/licenses/by-nc/3.0/us/
+protected under the GPL http://creativecommons.org/licenses/GPL/2.0/
 
-all published adaptations must link to volumedisplay.com
+please link all adaptations to volumedisplay.com
 
 == project organization
 
